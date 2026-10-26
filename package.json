@@ -19,7 +19,7 @@
     "better-auth": "^1.7.7",
     "drizzle-orm": "^0.45.4",
     "lucide-react": "^1.57.0",
-    "next": "16.4.0",
+    "next": "16.4.3",
     "nodemailer": "^10.1.1",
     "pannellum": "^2.5.7",
     "pdfjs-dist": "^6.4.299",
@@ -35,7 +35,7 @@
     "@types/react-dom": "^19",
     "drizzle-kit": "^0.31.11",
     "eslint": "^9",
-    "eslint-config-next": "16.4.0",
+    "eslint-config-next": "16.4.3",
     "tailwindcss": "^4",
     "tsx": "^4.23.15",
     "typescript": "^5"
