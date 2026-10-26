@@ -3,9 +3,11 @@ import Link from "next/link";
 export function ConstructionNotice({
   kicker,
   title,
+  message,
 }: {
   kicker: string;
   title: string;
+  message?: string;
 }) {
   return (
     <main className="flex min-h-[calc(100svh-80px)] items-start justify-center px-6 pt-10 pb-16">
@@ -14,11 +16,9 @@ export function ConstructionNotice({
           {kicker}
         </p>
         <h1 className="mt-2 text-2xl font-semibold text-navy">{title}</h1>
-        <p className="mt-3 text-[14px] leading-6 text-muted">
-          L’espace client est en construction. La plateforme sera bientôt
-          disponible. Pour toute question, écrivez-nous via le formulaire de
-          contact.
-        </p>
+        {message ? (
+          <p className="mt-3 text-[14px] leading-6 text-muted">{message}</p>
+        ) : null}
         <Link
           href="/#contact"
           className="mt-6 inline-flex h-11 items-center rounded-full bg-logo px-6 text-[15px] font-semibold text-white transition hover:bg-navy"

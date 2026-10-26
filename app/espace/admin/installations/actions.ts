@@ -129,7 +129,8 @@ export async function saveInstallationSpecification(id: string, formData: FormDa
   const item = await getInstallationById(id);
   if (!item) return;
   const extra = parseExtraFields(item.extraFields);
-  extra.specification = parseSpecificationForm(formData);
+  const specification = parseSpecificationForm(formData);
+  extra.specification = specification;
   await db
     .update(elevatorInstallation)
     .set({
@@ -137,7 +138,7 @@ export async function saveInstallationSpecification(id: string, formData: FormDa
       updatedAt: new Date(),
     })
     .where(eq(elevatorInstallation.id, id));
-  await logAudit(user.id, "specification", id, extra.specification.title);
+  await logAudit(user.id, "specification", id, specification.title);
   await notifyAscensoristesOfSpecificationChange(id);
   revalidatePath(`/espace/admin/installations/${id}`);
   revalidatePath(`/espace/admin/installations/${id}/cahier-des-charges`);

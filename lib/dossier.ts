@@ -13,6 +13,10 @@ export const SPEC_PURPOSES = [
 
 export type SpecPurpose = (typeof SPEC_PURPOSES)[number]["value"];
 
+export function isSpecPurpose(value: string): value is SpecPurpose {
+  return value === "remplacement" || value === "modernisation";
+}
+
 export function specPurposeLabel(purpose: string | undefined) {
   return (
     SPEC_PURPOSES.find((item) => item.value === purpose)?.label ?? "Cahier des charges"

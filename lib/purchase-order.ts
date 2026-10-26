@@ -79,7 +79,6 @@ async function extractPdfText(buffer: Buffer) {
     ).href;
     const task = pdfjs.getDocument({
       data: new Uint8Array(buffer),
-      isEvalSupported: false,
       useSystemFonts: true,
     });
     const pdf = await task.promise;

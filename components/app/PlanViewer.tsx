@@ -63,9 +63,11 @@ function PdfPages({ src }: { src: string }) {
 
   useEffect(() => {
     let cancelled = false;
-    const canvas = canvasRef.current;
-    const box = boxRef.current;
-    if (!canvas || !box) return;
+    const canvasEl = canvasRef.current;
+    const boxEl = boxRef.current;
+    if (!canvasEl || !boxEl) return;
+    const canvas: HTMLCanvasElement = canvasEl;
+    const box: HTMLDivElement = boxEl;
     let loadingTask: ReturnType<typeof getDocument> | null = null;
 
     async function draw() {

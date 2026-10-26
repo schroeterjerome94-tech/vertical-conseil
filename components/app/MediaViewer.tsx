@@ -290,14 +290,20 @@ function Photo360Viewer({ src, fileName }: { src: string; fileName: string }) {
   const [fallback, setFallback] = useState(false);
 
   useEffect(() => {
-    const wrap = wrapRef.current;
-    const canvas = canvasRef.current;
-    if (!wrap || !canvas) return;
-    const gl = canvas.getContext("webgl", { alpha: false, antialias: true });
-    if (!gl) {
+    const wrapEl = wrapRef.current;
+    const canvasEl = canvasRef.current;
+    if (!wrapEl || !canvasEl) return;
+    const glContext = canvasEl.getContext("webgl", {
+      alpha: false,
+      antialias: true,
+    });
+    if (!glContext) {
       setFallback(true);
       return;
     }
+    const wrap: HTMLDivElement = wrapEl;
+    const canvas: HTMLCanvasElement = canvasEl;
+    const gl: WebGLRenderingContext = glContext;
 
     let cancelled = false;
     let objectUrl: string | null = null;

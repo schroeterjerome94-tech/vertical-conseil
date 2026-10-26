@@ -33,6 +33,9 @@ yarn-error.log*
 # env files (can opt-in for committing if needed)
 .env*
 
+# identifiants / scripts d’envoi SFTP Infomaniak (ne jamais publier)
+scripts/envoyer-infomaniak.sh
+
 # base locale (développement)
 /data/*.db
 /data/*.db-*

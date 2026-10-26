@@ -46,17 +46,21 @@ function Video360Player({ src }: { src: string }) {
   }, [quality]);
 
   useEffect(() => {
-    const wrap = wrapRef.current;
-    const canvas = canvasRef.current;
-    const video = videoRef.current;
-    if (!wrap || !canvas || !video) return;
+    const wrapEl = wrapRef.current;
+    const canvasEl = canvasRef.current;
+    const videoEl = videoRef.current;
+    if (!wrapEl || !canvasEl || !videoEl) return;
 
-    const gl = canvas.getContext("webgl", {
+    const glContext = canvasEl.getContext("webgl", {
       alpha: false,
       antialias: false,
       powerPreference: "low-power",
     });
-    if (!gl) return;
+    if (!glContext) return;
+    const wrap: HTMLDivElement = wrapEl;
+    const canvas: HTMLCanvasElement = canvasEl;
+    const video: HTMLVideoElement = videoEl;
+    const gl: WebGLRenderingContext = glContext;
 
     let cancelled = false;
     let raf = 0;

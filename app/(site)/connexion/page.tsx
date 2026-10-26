@@ -10,7 +10,12 @@ export const metadata: Metadata = {
 
 export default function LoginPage() {
   if (!isPlatformOpen()) {
-    return <ConstructionNotice kicker="Espace client" title="Se connecter" />;
+    return (
+      <ConstructionNotice
+        kicker="Espace client"
+        title="Espace client en construction — Bientôt disponible"
+      />
+    );
   }
 
   return (

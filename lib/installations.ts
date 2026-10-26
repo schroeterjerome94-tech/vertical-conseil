@@ -12,6 +12,7 @@ import type { UserRole } from "./constants";
 import { dateSortDirection } from "./list-sort";
 import { parseExtraFields } from "./norms";
 import { displayAddress } from "./installation-display";
+import { isSpecPurpose } from "./dossier";
 
 export const INSTALLATION_FIELDS = [
   { name: "buildingAddress", label: "Adresse du bâtiment", section: "general" },
@@ -298,12 +299,12 @@ export function applyInstallationFilters(
     : input.workTypes
       ? [input.workTypes]
       : []
-  ).filter((item) => item === "remplacement" || item === "modernisation");
+  ).filter(isSpecPurpose);
   const direction = dateSortDirection(input.sort);
   const filtered = types.length
     ? items.filter((item) => {
         const purpose = parseExtraFields(item.extraFields).specification?.purpose;
-        return types.includes(purpose ?? "");
+        return purpose !== undefined && types.includes(purpose);
       })
     : items;
   return [...filtered].sort((a, b) => {

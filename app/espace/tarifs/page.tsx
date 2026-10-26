@@ -14,7 +14,11 @@ const CONDITIONS = [
   "Vertical Conseil reste indépendant des fabricants et des installateurs.",
 ];
 
-const TARIFS = [
+const TARIFS: {
+  title: string;
+  detail: string;
+  prices: { amount: string; label?: string }[];
+}[] = [
   {
     title: "Audit",
     detail: "Visite, contrôle de l’installation et rapport d’audit.",

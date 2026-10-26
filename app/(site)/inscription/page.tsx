@@ -11,7 +11,10 @@ export const metadata: Metadata = {
 export default function RegisterPage() {
   if (!isPlatformOpen()) {
     return (
-      <ConstructionNotice kicker="Inscription" title="Créer un compte" />
+      <ConstructionNotice
+        kicker="Inscription"
+        title="Les inscriptions seront prochainement disponibles"
+      />
     );
   }
 

@@ -29,7 +29,7 @@ export type ExtraFields = {
     purpose?: "remplacement" | "modernisation";
     title?: string;
     content?: string;
-    characteristics?: Record<string, string>;
+    characteristics?: Partial<Record<string, string>>;
     selectedClauses?: string[];
     mediaIds?: string[];
     importantNotes?: string;

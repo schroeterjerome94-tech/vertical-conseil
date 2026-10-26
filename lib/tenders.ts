@@ -10,7 +10,7 @@ import {
   tenderOffer,
   user,
 } from "./db/schema";
-import { specificationWorkType } from "./dossier";
+import { isSpecPurpose, specificationWorkType } from "./dossier";
 import { parseExtraFields } from "./norms";
 import { notifyByEmail } from "./notices";
 import { isOfferComplete, parseProposal } from "./offer-proposal";
@@ -88,14 +88,14 @@ export function applyTenderFilters(
   },
 ) {
   const q = input.query?.trim().toLowerCase();
-  const workTypes = asFilterList(input.workTypes).filter(
-    (item) => item === "remplacement" || item === "modernisation",
-  );
+  const workTypes = asFilterList(input.workTypes).filter(isSpecPurpose);
 
   const filtered = rows.filter(({ tender, installation }) => {
     const purpose = parseExtraFields(installation.extraFields).specification
       ?.purpose;
-    if (workTypes.length && !workTypes.includes(purpose ?? "")) return false;
+    if (workTypes.length && (purpose === undefined || !workTypes.includes(purpose))) {
+      return false;
+    }
 
     if (!q) return true;
     const hay = [
