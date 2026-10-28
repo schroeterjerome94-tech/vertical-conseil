@@ -16,8 +16,11 @@ export const metadata: Metadata = {
   description:
     "La plateforme indépendante de gestion et d’appels d’offres pour ascenseurs en Suisse.",
   icons: {
-    icon: [{ url: "/favicon.png", type: "image/png" }],
-    apple: "/apple-icon.png",
+    icon: [
+      { url: "/favicon.ico", sizes: "48x48" },
+      { url: "/favicon.png", type: "image/png" },
+    ],
+    apple: "/apple-icon",
   },
 };
 
