@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { TenderStatusBadge } from "@/components/app/TenderStatusBadge";
+import { TenderStatusBadge } from "@/components/TenderStatusBadge";
 
 const GERANCE_NAV = [
   "Tableau de bord",

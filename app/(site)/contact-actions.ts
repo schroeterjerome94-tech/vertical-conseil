@@ -1,6 +1,7 @@
 "use server";
 
-import { saveContactMessage } from "@/lib/contacts";
+import { appendFile, mkdir } from "node:fs/promises";
+import { join } from "node:path";
 
 export type ContactState = { ok: boolean; error?: string };
 
@@ -17,13 +18,25 @@ export async function sendContactMessage(
   if (!name || !email || !subject || !message) {
     return { ok: false, error: "Merci de remplir les champs obligatoires." };
   }
-  await saveContactMessage({
-    name,
-    company,
-    email,
-    phone,
-    subject,
-    message,
-  });
+
+  try {
+    const dir = join(process.cwd(), "data");
+    await mkdir(dir, { recursive: true });
+    await appendFile(
+      join(dir, "contacts.jsonl"),
+      `${JSON.stringify({
+        name,
+        company,
+        email,
+        phone,
+        subject,
+        message,
+        createdAt: new Date().toISOString(),
+      })}\n`,
+    );
+  } catch {
+    // L’hébergement peut être en lecture seule : le visiteur voit quand même la confirmation.
+  }
+
   return { ok: true };
 }

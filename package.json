@@ -9,35 +9,21 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start --hostname 0.0.0.0",
-    "lint": "eslint",
-    "db:push": "drizzle-kit push",
-    "db:seed": "tsx --env-file=.env.local scripts/seed-admins.ts",
-    "db:seed-testers": "tsx --env-file=.env.local scripts/seed-testers.ts"
+    "lint": "eslint"
   },
   "dependencies": {
-    "@libsql/client": "^0.18.0",
-    "better-auth": "^1.7.7",
-    "drizzle-orm": "^0.45.4",
-    "lucide-react": "^1.57.0",
     "next": "16.4.3",
-    "nodemailer": "^10.1.1",
-    "pannellum": "^2.5.7",
-    "pdfjs-dist": "^6.4.299",
     "react": "19.3.0",
-    "react-dom": "19.3.0",
-    "server-only": "^0.0.1"
+    "react-dom": "19.3.0"
   },
   "devDependencies": {
     "@tailwindcss/turbopack": "^4",
     "@types/node": "^20",
-    "@types/nodemailer": "^8.0.2",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "drizzle-kit": "^0.31.11",
     "eslint": "^9",
     "eslint-config-next": "16.4.3",
     "tailwindcss": "^4",
-    "tsx": "^4.23.15",
     "typescript": "^5"
   }
 }
