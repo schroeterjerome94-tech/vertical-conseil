@@ -84,7 +84,7 @@ export function Header() {
           : "border-b border-transparent bg-white/80 backdrop-blur-sm"
       }`}
     >
-      <div className="mx-auto flex h-[80px] w-full max-w-[1400px] items-center justify-between gap-4 px-8 sm:px-10 lg:px-14 xl:px-16">
+      <div className="site-bar flex h-[80px] items-center justify-between gap-4 px-8 sm:px-10 lg:px-14 xl:px-16 min-[1920px]:px-0">
         <Link
           href="/#accueil"
           className="shrink-0"

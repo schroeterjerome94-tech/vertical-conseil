@@ -106,8 +106,8 @@ export default function HomePage() {
     <main>
       <section id="accueil" className="overflow-hidden bg-black">
         <div className="grid min-h-[72vh] lg:grid-cols-2">
-          <div className="relative z-10 order-2 flex items-center bg-black px-6 py-14 sm:px-10 lg:order-1 lg:px-16 lg:py-20">
-            <div className="max-w-xl">
+          <div className="relative z-10 order-2 flex items-center bg-black px-6 py-14 sm:px-10 lg:order-1 lg:px-16 lg:py-20 min-[1920px]:px-24 min-[2560px]:px-32">
+            <div className="max-w-xl min-[1920px]:max-w-2xl min-[2560px]:max-w-3xl">
               <h1 className="text-4xl font-semibold leading-[1.15] tracking-tight text-white sm:text-5xl lg:text-[48px]">
                 La plateforme indépendante de gestion et d’appels d’offres{" "}
                 <span className="text-brand">pour ascenseurs</span>
@@ -149,7 +149,7 @@ export default function HomePage() {
       </section>
 
       <section className="bg-white">
-        <div className="mx-auto w-full max-w-[1400px] px-8 py-10 sm:px-10 lg:px-14 xl:px-16">
+        <div className="site-bar px-8 py-10 sm:px-10 lg:px-14 xl:px-16 min-[1920px]:px-0">
           <Reveal>
             <div className="grid items-stretch gap-4 sm:grid-cols-2 lg:grid-cols-4">
               {prestations.map((item) => (
@@ -408,7 +408,7 @@ export default function HomePage() {
       </section>
 
       <section id="formules" className="py-12 lg:py-14">
-        <div className="mx-auto w-[min(1240px,calc(100%-2rem))]">
+          <div className="formulas-wrap">
           <Reveal className="mx-auto max-w-2xl text-center">
             <p className="text-sm font-bold uppercase tracking-[0.16em] text-brand">
               Nos formules
