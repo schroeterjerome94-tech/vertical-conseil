@@ -3,6 +3,7 @@ import { ConstructionNotice } from "@/components/ConstructionNotice";
 
 export const metadata: Metadata = {
   title: "Confirmez votre e-mail",
+  robots: { index: false, follow: false },
 };
 
 export default function ConfirmationPage() {

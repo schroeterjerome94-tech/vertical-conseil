@@ -3,6 +3,7 @@ import { ConstructionNotice } from "@/components/ConstructionNotice";
 
 export const metadata: Metadata = {
   title: "Réinitialiser le mot de passe",
+  robots: { index: false, follow: false },
 };
 
 export default function ResetPasswordPage() {

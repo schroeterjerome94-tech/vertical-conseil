@@ -1,5 +1,7 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { SITE_DESCRIPTION, SITE_TITLE } from "@/lib/seo";
 import { ContactForm } from "@/components/ContactForm";
 import { HashLink } from "@/components/HashLink";
 import { Reveal } from "@/components/Reveal";
@@ -15,6 +17,14 @@ import {
   IconShieldCheck,
   IconUsers,
 } from "@/components/icons";
+export const metadata: Metadata = {
+  title: {
+    absolute: SITE_TITLE,
+  },
+  description: SITE_DESCRIPTION,
+  alternates: { canonical: "/" },
+};
+
 const features = [
   {
     title: "Historique complet",

@@ -3,6 +3,7 @@ import { ConstructionNotice } from "@/components/ConstructionNotice";
 
 export const metadata: Metadata = {
   title: "Compte en attente",
+  robots: { index: false, follow: false },
 };
 
 export default function PendingAccountPage() {
