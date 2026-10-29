@@ -30,8 +30,7 @@ export function ContactForm() {
           Merci pour votre message.
         </h3>
         <p className="mt-3 text-[15px] leading-7 text-muted">
-          L’envoi par e-mail sera connecté prochainement. Votre demande a été
-          enregistrée localement pour cette démonstration. Vous pouvez aussi
+          Nous vous répondrons dans les meilleurs délais. Vous pouvez aussi
           nous joindre directement à{" "}
           <a
             className="font-semibold text-logo underline-offset-4 hover:underline"
@@ -48,11 +47,17 @@ export function ContactForm() {
   return (
     <form
       action={action}
-      className="flex flex-col rounded-3xl border border-line bg-white p-5 shadow-[0_20px_60px_rgba(7,29,68,0.06)]"
+      className="relative flex flex-col rounded-3xl border border-line bg-white p-5 shadow-[0_20px_60px_rgba(7,29,68,0.06)]"
     >
       <p className="text-sm font-semibold uppercase tracking-[0.16em] text-brand">
         Envoyez-nous un message
       </p>
+      <div className="absolute -left-[10000px] h-0 w-0 overflow-hidden" aria-hidden="true">
+        <label>
+          Site web
+          <input type="text" name="website" tabIndex={-1} autoComplete="off" />
+        </label>
+      </div>
       <div className="mt-4 grid gap-3 sm:grid-cols-2">
         <label className="grid gap-1.5 text-[13px] font-semibold text-navy">
           Nom *
