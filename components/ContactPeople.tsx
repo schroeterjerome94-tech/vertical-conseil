@@ -56,7 +56,7 @@ export function ContactPeople() {
           <button
             type="button"
             onClick={() => setRevealed(true)}
-            className="inline-flex h-11 items-center rounded-full bg-logo px-7 text-[15px] font-semibold text-white shadow-[0_12px_28px_rgba(7,29,68,0.22)] transition hover:bg-navy"
+            className="inline-flex h-8 items-center rounded-full bg-logo px-3.5 text-[12px] font-semibold text-white shadow-[0_6px_16px_rgba(7,29,68,0.18)] transition hover:bg-navy"
           >
             Je ne suis pas un robot
           </button>
