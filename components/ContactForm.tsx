@@ -1,6 +1,6 @@
 "use client";
 
-import { useActionState } from "react";
+import { useActionState, useState } from "react";
 import {
   sendContactMessage,
   type ContactState,
@@ -15,6 +15,7 @@ const SUBJECTS = [
 ];
 
 export function ContactForm() {
+  const [startedAt] = useState(() => Date.now());
   const [state, action, pending] = useActionState(
     sendContactMessage,
     { ok: false } satisfies ContactState,
@@ -123,6 +124,17 @@ export function ContactForm() {
           />
         </label>
       </div>
+      <input type="hidden" name="startedAt" value={startedAt} readOnly />
+      <label className="mt-4 flex cursor-pointer items-start gap-3 text-[14px] font-medium text-navy">
+        <input
+          required
+          type="checkbox"
+          name="humain"
+          value="oui"
+          className="mt-0.5 size-4 shrink-0 rounded border-line accent-logo"
+        />
+        <span>Je ne suis pas un robot</span>
+      </label>
       {state.error ? (
         <p className="mt-3 text-[14px] font-semibold text-red-600">{state.error}</p>
       ) : null}

@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { SITE_DESCRIPTION, SITE_TITLE } from "@/lib/seo";
 import { ContactForm } from "@/components/ContactForm";
+import { ContactPeople } from "@/components/ContactPeople";
 import { HashLink } from "@/components/HashLink";
 import { Reveal } from "@/components/Reveal";
 import { CtaBanner } from "@/components/CtaBanner";
@@ -450,30 +451,7 @@ export default function HomePage() {
                 Une question, un projet ou besoin d’informations ? Notre équipe
                 vous répond rapidement.
               </p>
-              <div className="mt-6 grid w-fit max-w-full gap-3">
-                <div className="rounded-2xl border border-line bg-white p-4">
-                  <p className="font-semibold text-navy">Michel Gosteli</p>
-                  <p className="text-[13px] text-muted">Associé gérant</p>
-                  <p className="mt-2 text-[14px] leading-7 text-navy">
-                    <a href="tel:+41793778069">+41 79 377 80 69</a>
-                    <br />
-                    <a href="mailto:michel.gosteli@vertical-conseil.ch">
-                      michel.gosteli@vertical-conseil.ch
-                    </a>
-                  </p>
-                </div>
-                <div className="rounded-2xl border border-line bg-white p-4">
-                  <p className="font-semibold text-navy">Jérôme Schroeter</p>
-                  <p className="text-[13px] text-muted">Associé gérant</p>
-                  <p className="mt-2 text-[14px] leading-7 text-navy">
-                    <a href="tel:+41797374559">+41 79 737 45 59</a>
-                    <br />
-                    <a href="mailto:jerome.schroeter@vertical-conseil.ch">
-                      jerome.schroeter@vertical-conseil.ch
-                    </a>
-                  </p>
-                </div>
-              </div>
+              <ContactPeople />
             </Reveal>
             <Reveal delay={80}>
               <ContactForm />

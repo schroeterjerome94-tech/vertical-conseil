@@ -54,6 +54,22 @@ export async function sendContactMessage(
     return { ok: true };
   }
 
+  if (String(formData.get("humain") ?? "") !== "oui") {
+    return {
+      ok: false,
+      error: "Merci de confirmer que vous n’êtes pas un robot.",
+    };
+  }
+
+  const startedAt = Number(formData.get("startedAt"));
+  const elapsed = Date.now() - startedAt;
+  if (!Number.isFinite(startedAt) || elapsed < 1500 || elapsed > 6 * 60 * 60 * 1000) {
+    return {
+      ok: false,
+      error: "L’envoi n’a pas abouti. Merci de réessayer.",
+    };
+  }
+
   const name = clip(String(formData.get("nom") ?? "").trim(), MAX.name);
   const company =
     clip(String(formData.get("societe") ?? "").trim(), MAX.company) || null;
