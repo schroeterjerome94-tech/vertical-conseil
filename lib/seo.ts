@@ -1,7 +1,7 @@
 export const SITE_URL = "https://www.vertical-conseil.ch";
 
 export const SITE_TITLE =
-  "Vertical Conseil | Expert indépendant en ascenseurs – Suisse romande";
+  "Vertical Conseil | Consultant ascenseurs & plateforme de gestion";
 
 export const SITE_DESCRIPTION =
-  "Vertical Conseil accompagne les propriétaires et régies immobilières dans l'audit, la modernisation et l'optimisation des contrats d'entretien d'ascenseurs.";
+  "Conseil indépendant en ascenseurs et plateforme de gestion en Suisse romande. Audits, devis, contrats d'entretien, modernisations et appels d'offres.";

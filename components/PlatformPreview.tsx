@@ -135,9 +135,9 @@ export function PlatformPreview({
             <main className="min-w-0 flex-1 px-8 py-8">
               {gerance ? (
                 <div className="max-w-5xl">
-                  <h1 className="text-3xl font-semibold text-navy">
+                  <p className="text-3xl font-semibold text-navy">
                     Mes installations
-                  </h1>
+                  </p>
                   <p className="mt-2 text-[15px] text-muted">
                     Consultez les fiches qui vous sont attribuées. Les données
                     techniques ne sont pas modifiables.
@@ -178,9 +178,9 @@ export function PlatformPreview({
                 </div>
               ) : (
                 <div className="max-w-5xl">
-                  <h1 className="text-3xl font-semibold text-navy">
+                  <p className="text-3xl font-semibold text-navy">
                     Appels d’offres
-                  </h1>
+                  </p>
                   <p className="mt-2 text-[15px] text-muted">
                     Consultations auxquelles vous êtes invité.
                   </p>
