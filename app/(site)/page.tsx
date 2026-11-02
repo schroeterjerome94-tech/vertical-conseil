@@ -125,14 +125,12 @@ export default function HomePage() {
           <div className="relative z-10 order-2 flex items-center bg-black px-6 py-14 sm:px-10 lg:order-1 lg:px-16 lg:py-20 min-[1920px]:px-24 min-[2560px]:px-32">
             <div className="max-w-xl min-[1920px]:max-w-2xl min-[2560px]:max-w-3xl">
               <h1 className="text-4xl font-semibold leading-[1.15] tracking-tight text-white sm:text-5xl lg:text-[48px]">
-                Conseil indépendant en ascenseurs &{" "}
-                <span className="text-brand">plateforme de gestion</span>
+                La plateforme indépendante de gestion et d’appels d’offres{" "}
+                <span className="text-brand">pour ascenseurs</span>
               </h1>
               <p className="mt-6 max-w-lg text-[17px] leading-8 text-white/85">
-                Audits, analyse de devis, contrats d’entretien et modernisation :
-                nous accompagnons les régies et propriétaires en Suisse romande
-                grâce à notre expertise et à une plateforme de gestion
-                innovante.
+                Centralisez vos installations, consultez l’historique complet et
+                obtenez des offres comparables en toute transparence.
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <Link
