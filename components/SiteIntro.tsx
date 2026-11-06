@@ -20,8 +20,6 @@ export function SiteIntro() {
       return;
     }
 
-    document.documentElement.style.overflow = "hidden";
-
     if (intro === "open" || intro === "close" || intro === "ride") {
       setStep(intro);
       return;
@@ -34,7 +32,6 @@ export function SiteIntro() {
     const leave = window.setTimeout(() => setStep("leave"), 2300);
     const done = window.setTimeout(() => {
       if (!force) sessionStorage.setItem(STORAGE_KEY, "1");
-      document.documentElement.style.overflow = "";
       setStep("done");
     }, 3200);
 
@@ -43,7 +40,6 @@ export function SiteIntro() {
       window.clearTimeout(ride);
       window.clearTimeout(leave);
       window.clearTimeout(done);
-      document.documentElement.style.overflow = "";
     };
   }, []);
 

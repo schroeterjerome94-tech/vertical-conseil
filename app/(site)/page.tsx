@@ -126,7 +126,9 @@ export default function HomePage() {
             <div className="max-w-xl min-[1920px]:max-w-2xl min-[2560px]:max-w-3xl">
               <h1 className="text-4xl font-semibold leading-[1.15] tracking-tight text-white sm:text-5xl lg:text-[48px]">
                 La plateforme indépendante de gestion et d’appels d’offres{" "}
-                <span className="text-brand">pour ascenseurs</span>
+                <span className="whitespace-nowrap text-brand">
+                  pour ascenseurs
+                </span>
               </h1>
               <p className="mt-6 max-w-lg text-[17px] leading-8 text-white/85">
                 Centralisez vos installations, consultez l’historique complet et
