@@ -1,0 +1,127 @@
+.site-intro {
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  display: grid;
+  place-items: center;
+  background: #ffffff;
+  opacity: 1;
+  transition: opacity 0.7s ease;
+}
+
+.site-intro--leave {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.site-intro__badge {
+  position: relative;
+  width: 220px;
+  height: 220px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.site-intro__shaft {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.site-intro__car {
+  position: absolute;
+  inset: 0;
+  transform: translateY(0);
+  transition: transform 0.9s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.site-intro__rails {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.site-intro--ride .site-intro__car,
+.site-intro--leave .site-intro__car {
+  transform: translateY(-120%);
+}
+
+.site-intro__half {
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+  transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.site-intro__half--left {
+  left: 0;
+  transform: translateX(-36px);
+}
+
+.site-intro__half--right {
+  left: 50%;
+  transform: translateX(36px);
+}
+
+.site-intro--close .site-intro__half--left,
+.site-intro--ride .site-intro__half--left,
+.site-intro--leave .site-intro__half--left {
+  transform: translateX(0);
+}
+
+.site-intro--close .site-intro__half--right,
+.site-intro--ride .site-intro__half--right,
+.site-intro--leave .site-intro__half--right {
+  transform: translateX(0);
+}
+
+.site-intro__cabin {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 200%;
+  max-width: none;
+}
+
+.site-intro__half--left .site-intro__cabin {
+  left: 0;
+}
+
+.site-intro__half--right .site-intro__cabin {
+  left: -100%;
+}
+
+.site-intro__chevron {
+  position: absolute;
+  left: 50%;
+  top: 36.4%;
+  z-index: 2;
+  width: 11%;
+  height: auto;
+  transform: translateX(-50%);
+  overflow: visible;
+}
+
+.site-intro__chevron path {
+  fill: none;
+  stroke: #074bff;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-intro,
+  .site-intro__car,
+  .site-intro__half {
+    transition: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+  }
+}
